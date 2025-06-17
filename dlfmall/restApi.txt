@@ -1,0 +1,18 @@
+REST API
+We have to apply the migrations so that whatever classes that we have written in models.py 
+can be converted into the raw queries and applied to the respective databases.
+
+python manage.py makemigrations
+python manage.py migrate 
+python manage.py createsuperuser
+
+
+Types of API: POST
+Request BODY:
+{
+    "name":"Aman",
+    "email":"aman775@gmail.com"
+    "mobile":"747229832"
+    "password":"aman1234"
+    "address":"cc34,kankerbagh"
+}
