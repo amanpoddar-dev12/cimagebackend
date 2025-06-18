@@ -7,4 +7,9 @@ class useDetailsSerialaizer(serializers.Serializer):
     password=serializers.CharField(max_length=50)
     address=serializers.CharField(max_length=50)
 
-
+   
+class EventDetailsSerializer(serializers.Serializer):
+    eventName = serializers.CharField(max_length=50)
+    eventDiscription = serializers.CharField(max_length=100)
+    eventDate = serializers.DateTimeField()
+    eventVenue = serializers.CharField(max_length=50)

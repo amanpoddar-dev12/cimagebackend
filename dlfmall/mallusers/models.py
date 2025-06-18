@@ -30,3 +30,4 @@ class registrationDetails(models.Model):
     registrationId=models.AutoField(primary_key=True)
     eventId=models.ForeignKey(eventDetails,on_delete=models.CASCADE)
     email=models.ForeignKey(userDetails,on_delete=models.CASCADE)
+    

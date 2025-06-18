@@ -18,3 +18,17 @@ class userMembership(APIView):
         message={"Membership Details":result}
         return JsonResponse(message,safe=False)
     
+
+class createEvent(APIView):
+    def post(self, request):
+        serializer = EventDetailsSerializer(data=request.data)
+        if serializer.is_valid():
+            eventDetails.objects.create(**serializer.validated_data)
+            return JsonResponse({"message": "Event created successfully"})
+        return JsonResponse(serializer.errors, status=400)
+
+class getEventDetails(APIView):
+    def get(self,request):
+        result=list(eventDetails.objects.values())
+        message={"Event Details":result}
+        return JsonResponse(message,safe=False)
